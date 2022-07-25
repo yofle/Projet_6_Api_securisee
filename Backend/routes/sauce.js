@@ -25,7 +25,9 @@ router.get('/:id',auth, sauceCtrl.getOnesauce);
 // la route ne répond que au requête get, permet de récupérer les objets
 router.get('/',auth, sauceCtrl.getAllsauce );
 
-//on rajoute auth avant pour permettre de prendre en compte le gestionnaire du token
+
+router.post('/:id/like', auth, sauceCtrl.sauceLiked);
+//on rajoute auth avant pour permettre de prendre en compte le gestionnaire du token (pour que le gens ne puissent pas faire une action sur des sauces qui ne sont pas à eux)
 
 
 module.exports = router;//exporter router
